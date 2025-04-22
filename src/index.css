@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+  .form{
+    @apply grid grid-cols-4 
+  }
+  .form .clear {
+    @apply col-span-2 bg-yellow-600 flex justify-center items-center
+  }
+.form span{
+  @apply  py-8 border border-slate-800 bg-gray-900 text-white  text-xl flex items-center justify-center cursor-pointer active:bg-yellow-600
+}
+ .view{
+  @apply col-span-4 py-10 px-5 text-2xl text-right
+}
+.plus{
+  @apply row-span-2 flex items-center justify-center
+}
+
+}
