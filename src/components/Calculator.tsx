@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const Calculator = () => {
   const [inputValue, setInputValue] = useState("");
+  const [lightBG, setLightBG] = useState(false);
 
   const clear = () => setInputValue("");
 
@@ -13,8 +14,20 @@ const Calculator = () => {
   };
 
   return (
-    <div className=" bg-slate-900 w-full min-h-screen flex justify-center items-center">
-      <div className=" bg-slate-700 w-full max-w-sm  ">
+    <div
+      className={
+        lightBG
+          ? " bg-white w-full min-h-screen flex justify-center items-center"
+          : " bg-slate-900 w-full min-h-screen flex justify-center items-center"
+      }>
+      <div className=" w-full max-w-sm  ">
+        <div className="  my-2">
+          <button
+            onClick={() => setLightBG(!lightBG)}
+            className=" bg-white py-2 px-2 rounded text-gray-900">
+            Toggle background
+          </button>
+        </div>
         <form className=" form">
           <input type="text" value={inputValue} className="view" />
           <span className="clear" onClick={() => clear()}>
